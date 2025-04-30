@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #7bcaf2;
+            
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        h1{
+            padding-top: 150px;
+            padding-left: 60px;
+        }
+        ul{
+            display: flex;
+            padding: 20px;
+            margin: 20px;
+        }
+        li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            text-align: center;
+            margin: 50px;
+            color: white;
+            font-weight: 900;
+        }
+        a:hover{
+            color: #268fc4;
+        }
+        p{
+            background-color: #7bcaf2;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            padding: 40px;
+            justify-content: center;
+            margin-left: 80px;
+            width: 60%;
+            border: 1px solid #48a8d8;
+            border-radius: 10px;
+            line-height: 30px;
+            box-shadow: 1px 1px 50px #268fc4;
+        }
+        img{
+            
+            box-shadow: 0.5px 0.5px 1px #2c2c2b;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        button{
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            border-radius:10px;
+            width: 200px;
+            border: none;
+            background-color: #1ba7ed;
+            padding: 20px;
+            margin: 20px;
+        }
+        button:hover{
+            background-color: #09b8fd;
+            color:black;
+            transform:scaleX(1.0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WEB DEVELOPMENT</h1>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+        <p>This heading emphasizes the company’s commitment to innovation and highlights its expertise in delivering advanced software solutions. It portrays Apexplanet Software Pvt. Ltd. as a forward-thinking and reliable partner in the tech industry.</p>
+        <a href="https://apexplanet.in/"><img src="Images/apex.png" alt="image" target="_blank"></a><br><br>
+        <button onclick="trigger()">Click Me</button>
+    </div>
+    <script>
+        function trigger(){
+            alert("TASK 1 Completed")
+        }
+    </script>
+</body>
+</html>
