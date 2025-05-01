@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK - 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #7bcaf2;
+            
+        }
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        h1{
+            padding-top: 100px;
+            padding-left: 60px;
+            font-weight: 900;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        ul{
+            display: flex;
+            padding: 20px;
+            margin: 20px;
+        }
+        li{
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            text-align: center;
+            margin: 50px;
+            color: white;
+            font-weight: 900;
+        }
+        a:hover{
+            color: #268fc4;
+            
+        }
+        p{
+            background-color: #7bcaf2;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            padding: 40px;
+            justify-content: center;
+            margin-left: 80px;
+            width: 60%;
+            border: 1px solid #48a8d8;
+            border-radius: 10px;
+            line-height: 30px;
+            box-shadow: 1px 1px 50px #268fc4;
+        }
+        .secondpara{
+            width: 80%;
+            margin-top: 20px;
+        }
+        .secondpara:hover{
+            transform: scale(0.9);
+        }
+        .thirdpara{
+            width: 50%;
+            margin-top: 20px;
+
+        }
+        span{
+            font-style: italic;
+            font-size: 20px;
+            color: white;
+        }
+        img{
+            
+            box-shadow: 0.5px 0.5px 1px #2c2c2b;
+            margin-top: 50px;
+            padding: 20px;
+        }
+        button{
+            color: white;
+            font-weight: 700;
+            font-size: 20px;
+            border-radius:10px;
+            width: 200px;
+            border: none;
+            background-color: #1ba7ed;
+            padding: 20px;
+            margin: 20px;
+        }
+        button:hover{
+            background-color: #09b8fd;
+            color:black;
+            transform:scaleX(1.0);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WEB DEVELOPMENT</h1>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+        <p>This heading emphasizes the company’s commitment to innovation and highlights its expertise in delivering advanced software solutions. It portrays <span>Apexplanet Software Pvt. Ltd.</span> as a forward-thinking and reliable partner in the tech industry.</p>
+        <p class="secondpara"> Utilizing open-source software can eliminate licensing fees and reduce dependency on proprietary solutions. Effective license management tools ensure compliance while optimizing software usage costs.</p>
+        <p class="thirdpara"> Welcome to ApexPlanet Software Pvt. Ltd. where digital innovation meets strategic marketing excellence. We are a passionate team of digital marketing professionals dedicated to helping businesses of all sizes thrive in the online world. Our mission is to empower brands with the tools and strategies they need to succeed in today’s ever-evolving digital landscape.</p>
+        <a href="https://apexplanet.in/" target="_blank"><img src="Images/apex.png" alt="image"></a><br><br>
+        <button onclick="trigger()" >Click Me</button>
+    </div>
+    <script>
+        function trigger(){
+            alert("TASK 1 Completed")
+        }
+    </script>
+</body>
+</html>
