@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form And To-Do List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #f9f3e1, #fce3c7);
+            color: #4b4b4b;
+        }
+        form {
+            max-width: 700px;
+            margin: 20px auto; 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px; 
+            border-radius: 8px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+        .contacth2 {
+            font-size: 2.5em; 
+            text-align: center;
+            margin-bottom: 20px; 
+            color: #333; 
+        }
+        form label {
+            font-size: 1em; 
+            color: #333; 
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px; 
+        }
+        form input,
+        form textarea {
+            padding: 10px; 
+            border-radius: 5px;
+            border: 1px solid #ccc; 
+            font-size: 1em;
+        }
+        form button {
+            background-color: rgb(8, 209, 249);
+            color: white;
+            padding: 12px 20px; 
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em; 
+            cursor: pointer;
+            margin-bottom: 20px; 
+            transition: background-color 0.3s ease; 
+        }
+        form button:hover {
+            background-color: rgb(6, 172, 211); 
+        }
+        #todo {
+            background: #fabc8c;
+            padding: 30px 20px; 
+            color: #4b4b4b;
+            margin-top: 20px; 
+        }
+        #todo h2 {
+            text-align: center;
+            font-size: 2em; 
+            margin-bottom: 20px; 
+            color: #333; 
+        }
+        .todo-container {
+            text-align: center;
+        }
+        #todoInput {
+            padding: 10px; 
+            width: 80%; 
+            max-width: 400px; 
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #f7d1c1;
+            margin-bottom: 10px;
+        }
+        #addTodo {
+            background-color: rgb(8, 148, 247);
+            color: #fff;
+            padding: 10px 15px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        #addTodo:hover {
+            background-color: rgb(6, 121, 202); 
+        }
+        #todoList {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 80%; 
+            max-width: 500px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #todoList li {
+            background-color: #fff;
+            padding: 10px 15px; 
+            margin-bottom: 8px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            border: 1px solid #f7d1c1;
+        }
+        #todoList li.completed {
+            text-decoration: line-through;
+            background-color: #f2f2f2;
+            color: #777; 
+        }
+        #todoList li button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+        #todoList li button:hover {
+            background-color: darkred;
+        }
+        @media (max-width:700px) {
+            body {
+                background: rgb(250, 200, 200);
+                margin: 20px; 
+            }
+            #todo {
+                background: rgb(231, 148, 148);
+                padding: 20px; 
+            }
+            form {
+                margin: 20px; 
+                padding: 15px; 
+            }
+            #todoInput {
+                width: 100%; 
+            }
+            #todoList {
+                width: 100%; 
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="contact">
+        <h2 style="text-align:center" class="contacth2">Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="todo">
+        <h2>Adding To-Do List Tasks</h2>
+        <div class="todo-container">
+            <input type="text" id="todoInput" placeholder="Add a new task..." />
+            <button id="addTodo">Add Task</button>
+            <ul id="todoList"></ul>
+        </div>
+    </section>
+    <script>
+        
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); 
+            const name = document.getElementById('name').value.trim(); 
+            const email = document.getElementById('email').value.trim(); 
+            const message = document.getElementById('message').value.trim(); 
+            if (name === '' || email === '' || message === '') {
+                alert('All fields are required!');
+                return;
+            }
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            alert('Thank you for contacting us!');
+            document.getElementById('contactForm').reset();
+        });
+        const addTodoButton = document.getElementById('addTodo');
+        const todoInput = document.getElementById('todoInput');
+        const todoList = document.getElementById('todoList');
+        addTodoButton.addEventListener('click', function () {
+            if (todoInput.value.trim() !== "") {
+                const li = document.createElement('li');
+                li.textContent = todoInput.value;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = "Remove";
+                removeButton.onclick = function () {
+                    todoList.removeChild(li);
+                };
+                li.addEventListener('click', function () {
+                    li.classList.toggle('completed');
+                });
+                li.appendChild(removeButton);
+                todoList.appendChild(li);
+                todoInput.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
